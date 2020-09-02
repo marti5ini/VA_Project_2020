@@ -1,39 +1,48 @@
 <template>
   <div id="app">
-    <!-- navbar -->
-    <div class="navbar fixed-top navbar-expand-lg navbar-dark indigo">
-      <router-link class="navbar-brand" to="/" ><strong>NonLinear Causal Graph</strong></router-link>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <nav class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+    <mdb-navbar position="top" dark color="indigo" scrolling>
+      <mdb-navbar-brand>
+        <router-link class="navbar-brand" to="/" ><strong>NonLinear Causal Graph</strong></router-link>
+      </mdb-navbar-brand>
+      <mdb-navbar-toggler>
+        <mdb-navbar-nav>
+          <mdb-nav-item>
             <router-link class="nav-link" to="/binary">Binary</router-link>
-          </li>
-          <li class="nav-item">
+          </mdb-nav-item>
+          <mdb-nav-item>
             <router-link class="nav-link" to="/general">Generalization</router-link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          </mdb-nav-item>
+        </mdb-navbar-nav>
+      </mdb-navbar-toggler>
+    </mdb-navbar>
     <transition name="moveInUp">
       <router-view/>
     </transition>
-    <!-- navbar -->
-    <!-- Footer -->
     <footer class="page-footer font-small indigo">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3 white-text">© 2020 VA Project | Martina Cinquini </div>
-      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3 white-text">
+        <p>© 2020 VA Project | Martina Cinquini</p>
+      </div>
     </footer>
-    <!-- Footer -->
   </div>
 </template>
 
 <script>
+  import {
+    mdbNavbar,
+    mdbNavItem,
+    mdbNavbarNav,
+    mdbNavbarToggler,
+    mdbNavbarBrand
+  } from "mdbvue";
   export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      mdbNavbar,
+      mdbNavItem,
+      mdbNavbarNav,
+      mdbNavbarToggler,
+      mdbNavbarBrand
+    }
   }
 </script>
 
@@ -41,7 +50,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
 $image-path: '~@/../mdb/mdbvue/img';
-@import '~@/../mdb/mdbvue/scss/mdb-free.scss';
+@import "~@/../mdb/mdbvue/scss/mdb-free.scss";
 
 
 .moveInUp-enter-active{
@@ -70,6 +79,9 @@ $image-path: '~@/../mdb/mdbvue/img';
     }
   }
   .top-nav-collapse {
-    background-color: #f8bbd0 !important;
+    background-color: #4285f4 !important;
+  }
+  footer p {
+    margin: 0;
   }
 </style>
