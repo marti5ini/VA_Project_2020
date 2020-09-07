@@ -51,7 +51,7 @@
                 const refY = markerBoxHeight * 2;
                 const arrowPoints = [[0, 0], [0, 20], [20, 10]];
 
-                const svg = d3.select("#graph-viz svg")
+                const svg = d3.select("#graph-viz svg");
 
                 function dragstart() {
                     d3.select(this).raise().classed("active", true);
@@ -99,7 +99,7 @@
                         .on("drag", dragged)
                         .on("end", dragend));
 
-                let colors = ["#3f51b5", "#005cbf"]
+                let colors = ["#3282b8", "#005cbf"]
 
                 g.select(".group_circle")
                     .attr("cx", function (d) {
@@ -145,29 +145,21 @@
                             return i === l.source
                         })[0];
                         d3.select(this).attr("y1", sourceNode.y);
-                        return sourceNode.x + 45
+                        if (sourceNode.x === 320) {return sourceNode.x - 45}
+                        else {return sourceNode.x + 45}
                     })
                     .attr("x2", function (l) {
                         let targetNode = nodes.filter(function (d, i) {
                             return i === l.target
                         })[0];
                         d3.select(this).attr("y2", targetNode.y);
-                        return targetNode.x - 55
+                        if (targetNode.x === 60) {return targetNode.x + 55}
+                        else {return targetNode.x - 55}
                     })
-                    //TODO: Gestire la freccia inversa che va in overlap con i cerchi
                     .attr("fill", "none")
                     .attr("stroke", "black")
                     .attr("stroke-width", "4")
-                    .attr("marker-end", "url(#arrow)")
-                    .on("click", function () {
-                        if (!d3.select(this).classed("selected") ){
-                            d3.select(this).classed("selected", true);
-                            d3.select(this).attr("stroke-dasharray", ("5, 5"));
-                        }else{
-                            d3.select(this).classed("selected", false);
-                            d3.select(this).attr("stroke-dasharray", ("0, 0"));
-                        }
-                    });
+                    .attr("marker-end", "url(#arrow)");
             }
         },
         watch: {

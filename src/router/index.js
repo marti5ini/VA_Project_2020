@@ -21,13 +21,13 @@ const routes = [
   },
   {
     path: '/binary',
-    name: 'binaryDep',
-    component: loadView('binaryDep')
+    name: 'bivariateCase',
+    component: loadView('bivariateCase')
   },
   {
     path: '/general',
-    name: 'general',
-    component: loadView('general')
+    name: 'multivariateCase',
+    component: loadView('multivariateCase')
   },
 ]
 

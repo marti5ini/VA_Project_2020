@@ -18,6 +18,26 @@
                 {{dataset.options[current].nodes}}
                 <binaryViz :nodesNames="dataset.options[current].nodes"/>
             </div>
+            {
+            key: 'undata',
+            nodes: [{
+            name: "Age",
+            x: 60,
+            y: 100
+            }, {
+            name: "Latitude",
+            x: 320,
+            y: 100
+            }],
+            edges: [{
+            source: 0,
+            target: 1
+            }],
+            path_resX: './data/undata/residuals/residuals_x.csv',
+            path_resY: './data/undata/residuals/residuals_y.csv',
+            fwd: './data/undata/gpr/fwd',
+            bwd: './data/undata/gpr/bwd'
+            },
         </div>
     </div>
 </template>

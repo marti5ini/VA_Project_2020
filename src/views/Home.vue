@@ -1,21 +1,26 @@
 <template>
   <div class="home">
     <div class="jumbotron card morpheus-den-gradient">
-      <div class="text-white text-center py-5 px-4">
-        <div>
-          <h2 class="card-title h2-responsive pt-3 mb-5 font-bold"><strong>Why nonlinearities?</strong></h2>
-          <p class="mx-3 mb-3">The discovery of causal relationships between a set of observed variables is a fundamental
-            problem in science. <br/> We
-            show that the basic linear framework can be generalized to nonlinear models. In
-            this extended framework, nonlinearities in the data-generating process are in fact a
-            blessing rather than a curse, as they typically provide information on the underlying
-            causal system and allow more aspects of the true data-generating mechanisms
-            to be identified. In addition to theoretical results we show simulations and some
-            simple real data experiments illustrating the identification power provided by nonlinearities.
+      <div class="text-white text-center px-4">
+          <h2 class="card-title h2-responsive mb-5 font-bold">
+            <strong>From statistical to causal explanations</strong>
+          </h2>
+          <p class="mx-3 mb-3">
+            One of the main endeavours of many sciences is to identify causal relations.
+            Given a phenomenon, researchers are interested in finding out which variables have causal influence on that phenomenon.
+            Furthermore, scientists want to know how that phenomenon will change when one manipulates those variables.
+            For instance, when a new drug is tested, it is examined whether it has a causal effect on improving the health of
+            the patients. In these circumstances one uses randomized trials to assess the causal interaction. In this case
+            that would amount to one group of test subjects receiving the drug and the other group receiving a placebo.
+            Ideally, causal discovery is performed via these randomized trials. However, sometimes one cannot perform
+            these type of experiments and one only has observational data, i.e. data obtained without any interventions.
+            Observational data is where causal discovery algorithms come into play. Causal discovery algorithms are
+            algorithms that try to derive causal relations from observational data. That is, given a set of data, a causal
+            discovery algorithm returns a set of statements regarding the causal interactions between the measured
+            variables.
           </p>
           <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View Binary</a>
           <a class="btn btn-outline-white btn-md"><i class="fas fa-clone right"></i> View Generalization</a>
-        </div>
       </div>
     </div>
 
@@ -76,6 +81,23 @@
 
           </div>
         </div>
+
+        <p><strong>Why nonlinearities?</strong></p>
+        <mdb-card class="model">
+          <mdb-card-body>
+            <p>
+              There is an extensive body of literature on causal modeling and causal discovery that
+              assumes that effects are linear functions of their causes plus independent, Gaussian noise.
+              These models are known as <i>Structural Equation Models</i> (SEM) and are popular in econometrics, sociology,
+              psychology and other fields. Although the assumptions of linearity and Gaussianity
+              are mathematically convenient, they are not always realistic.
+              <br>
+              This approach attempts to show that the linear framework can be generalized to nonlinear models.
+              In particular, <strong>nonlinearities</strong> in the data-generating process provide information on the underlying causal system and
+              allow more aspects of the true data-generating mechanisms to be identified.
+            </p>
+          </mdb-card-body>
+        </mdb-card>
 
       </section>
 

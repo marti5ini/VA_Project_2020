@@ -32,6 +32,7 @@
                     margin:{'t': 35, 'l': 60, 'r': 20,'b': 50},
                     xaxis:{
                         title: '',
+                        zeroline: false,
                         fixedrange: true //disable zoom
                     },
                     yaxis:{
@@ -86,7 +87,6 @@
                 handler() {
                     this.traces = [];
                     this.data = [];
-                    this.refresh();
                 },
                 deep: true,
             },

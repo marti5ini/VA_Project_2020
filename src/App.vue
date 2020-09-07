@@ -7,10 +7,10 @@
       <mdb-navbar-toggler>
         <mdb-navbar-nav>
           <mdb-nav-item>
-            <router-link class="nav-link" to="/binary">Binary</router-link>
+            <router-link class="nav-link" to="/binary">Bivariate</router-link>
           </mdb-nav-item>
           <mdb-nav-item>
-            <router-link class="nav-link" to="/general">Generalization</router-link>
+            <router-link class="nav-link" to="/general">Multivariate</router-link>
           </mdb-nav-item>
         </mdb-navbar-nav>
       </mdb-navbar-toggler>
@@ -83,5 +83,8 @@ $image-path: '~@/../mdb/mdbvue/img';
   }
   footer p {
     margin: 0;
+  }
+  #app {
+    margin-top: 78px;
   }
 </style>

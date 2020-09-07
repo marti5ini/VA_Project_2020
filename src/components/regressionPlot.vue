@@ -19,7 +19,6 @@
         },
         data() {
             return {
-                traces: {},
                 data: [],
                 predictions: [],
                 confidence: [],
@@ -43,6 +42,7 @@
                             text: '',
                             standoff: 8
                         },
+                        zeroline: false,
                         automargin: true,
                         fixedrange: true
                     },
