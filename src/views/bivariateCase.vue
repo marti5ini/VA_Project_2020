@@ -63,7 +63,7 @@
       </section>
 
 
-      <!--<mdb-row class="row justify-content-center">
+      <mdb-row class="row justify-content-center">
       <mdb-col sm="4">
         <mdb-card class="intro"  v-animateOnScroll="'fadeIn'">
           <mdb-card-body>
@@ -102,7 +102,7 @@
       <mdb-btn-group id="btn-dataset">
         <mdb-btn  v-for="(item, i) in options"
                  :key="item.key"
-                  @click="childClick(i)"
+                  @click="handleClick(i)"
                  :class="{current: i === current}"
                  color="primary"
         >{{item.key}}</mdb-btn>
@@ -263,7 +263,7 @@
       regressionPlot,
       graph,
       residualsPlot,
-      scatterplotExample,
+      //scatterplotExample,
       mdbCard,
       mdbCardBody,
       mdbBtnGroup,
@@ -442,8 +442,7 @@
       });
     },
     methods: {
-      // Triggered when `childToParent` event is emitted by the child.
-      childClick(i) {
+      handleClick(i) {
         this.selected = false;
         this.current = i;
         this.forceRerender();

@@ -2,15 +2,15 @@
   <div id="app">
     <mdb-navbar position="top" dark color="indigo" scrolling>
       <mdb-navbar-brand>
-        <router-link class="navbar-brand" to="/" ><strong>NonLinear Causal Graph</strong></router-link>
+        <router-link class="navbar-brand" to="/" ><strong>Nonlinear Causal Discovery with ANM</strong></router-link>
       </mdb-navbar-brand>
       <mdb-navbar-toggler>
         <mdb-navbar-nav>
           <mdb-nav-item>
-            <router-link class="nav-link" to="/binary">Bivariate</router-link>
+            <router-link class="nav-link" to="/binary">Bivariate Case</router-link>
           </mdb-nav-item>
           <mdb-nav-item>
-            <router-link class="nav-link" to="/general">Multivariate</router-link>
+            <router-link class="nav-link" to="/general">Multivariate Case</router-link>
           </mdb-nav-item>
         </mdb-navbar-nav>
       </mdb-navbar-toggler>
