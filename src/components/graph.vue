@@ -99,7 +99,7 @@
                         .on("drag", dragged)
                         .on("end", dragend));
 
-                let colors = ["#3282b8", "#005cbf"]
+                let colors = ["#3282b8", "#005cbf", "#0069d9", "#929fba"]
 
                 g.select(".group_circle")
                     .attr("cx", function (d) {

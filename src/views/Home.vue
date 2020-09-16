@@ -160,13 +160,13 @@
       <div class="row mt-3 justify-content-center">
         <a class="btn btn-outline btn-md" style="color: #0d47a1; border: 2px solid #0d47a1">
           <i class="fas fa-clone left"></i>
-          <router-link to="/binary">Learn more on Bivariate Case</router-link></a>
+          <router-link to="/binary">Learn more about Bivariate Case</router-link></a>
         <a class="btn btn-outline btn-md" style="color: #0d47a1; border: 2px solid #0d47a1">
           <i class="fas fa-clone right"></i>
-          <router-link to="/general"> Learn more on Multivariate Case</router-link></a>
+          <router-link to="/general"> Learn more about Multivariate Case</router-link></a>
       </div>
     </div>
-    
+
   </div>
 </template>
 

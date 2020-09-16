@@ -120,16 +120,17 @@
     <!-- ********** -->
 
     <!--Implementation SideBar-->
-    <!--<h5 style="margin-top: 15px" class="font-weight-bold">Pratical Estimation Method</h5>
+    <!--<h5 style="margin-top: 15px" class="font-weight-bold">Practical Estimation Method</h5>
 
     <div>
       <div class="mb-3">
-        <b-button v-b-toggle href="#description" @click.prevent>Further Informations</b-button>
+        <b-button v-b-toggle href="#description" @click.prevent>More Information</b-button>
       </div>
 
       <b-sidebar id="description" title="Approach Details" shadow>
         <div class="px-3 py-2">
           <p>
+            <strong>Regressor</strong><br>
             <strong>Regressor</strong><br>
             For the regression, we used the Gaussian Process Regressor using a Gaussian kernel
             and independent Gaussian noise, optimizing the hyperparameters for each regression individually.
@@ -146,7 +147,7 @@
       </b-sidebar>
     </div>-->
 
-    <mdb-card class="model" v-if="options[current].edges[0].source === 0">
+    <!--<mdb-card class="model" v-if="options[current].edges[0].source === 0">
       <mdb-card-body>
         <p>
          The correct model <strong> {{options[current].nodes[0].name}} causes {{options[current].nodes[1].name}} </strong>
@@ -161,7 +162,7 @@
           leads a p value of <i>{{options[current].nodes[1].p_value}}</i>.
         </p>
       </mdb-card-body>
-    </mdb-card>
+    </mdb-card>-->
 
     <!--Forward fit-->
     <mdb-row class="mb-4">
@@ -185,7 +186,7 @@
       </mdb-col>
     </mdb-row>
 
-    <mdb-card class="model" v-if="options[current].edges[0].target === 1">
+   <!-- <mdb-card class="model" v-if="options[current].edges[0].target === 1">
       <mdb-card-body>
         <p>
           The reverse model <strong> {{options[current].nodes[1].name}} causes {{options[current].nodes[0].name}} </strong>
@@ -202,7 +203,7 @@
       </mdb-card-body>
     </mdb-card>
 
-    <!--Backward Fit-->
+    Backward Fit-->
     <mdb-row class="mb-4">
       <mdb-col sm="6">
         <mdb-card>
@@ -274,6 +275,7 @@
       mdbIcon,
       mdbTooltip
     },
+
     directives: {
       animateOnScroll
     },
@@ -443,7 +445,7 @@
     },
     methods: {
       handleClick(i) {
-        this.selected = false;
+        //this.selected = false;
         this.current = i;
         this.forceRerender();
       },
@@ -452,6 +454,7 @@
         this.componentKey2 += 1;
         this.componentKey3 += 1;
         this.componentKey4 += 1;
+
       },
       toggle(){
         this.visible = !this.visible;
