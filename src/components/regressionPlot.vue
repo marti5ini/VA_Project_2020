@@ -175,6 +175,9 @@
         watch: {
             file: {
                 handler() {
+                    this.data= [];
+                    this.predictions= [];
+                    this.confidence= [];
                     this.result = [];
                 },
                 deep: true,

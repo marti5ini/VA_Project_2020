@@ -96,6 +96,15 @@
                     }
                 }
             }
+        },
+        watch: {
+            zValues: {
+                handler() {
+                    this.layout.annotations = [];
+                    this.traces = [];
+                    this.createMatrix();
+                }
+            }
         }
     }
 </script>

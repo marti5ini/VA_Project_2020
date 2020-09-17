@@ -33,12 +33,12 @@
                     xaxis:{
                         title: '',
                         zeroline: false,
-                        fixedrange: true //disable zoom
+                        fixedrange: true
                     },
                     yaxis:{
                         zeroline: false,
                         title: '',
-                        fixedrange: true //disable zoom
+                        fixedrange: true
                     }
                 },
                 options:{
@@ -50,7 +50,7 @@
         },
         mounted() {
             d3.csv(this.file).then((res) => {
-                var reports = res.map((d) => {
+                let reports = res.map((d) => {
                     const r = {
                         residuals: +d.residuals,
                         dependent_var: +d.dependent_var
@@ -70,7 +70,7 @@
         },
         methods: {
             createPlot() {
-                var results = {
+                let results = {
                     x: this.data[0], //dependent variable
                     y: this.data[1], //residuals
                     mode: 'markers',

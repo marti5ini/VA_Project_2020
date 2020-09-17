@@ -30,8 +30,7 @@ export default {
         this.margin = {top: 10, right: 10, bottom: 10, left: 10};
         this.width = 400 - this.margin.left - this.margin.right;
         this.height = 250 - this.margin.top - this.margin.bottom;
-        //svg
-        var svg = d3.select("#dataviz_Slider")
+        d3.select("#dataviz_Slider")
             .append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom);
@@ -39,25 +38,26 @@ export default {
     },
     methods: {
         drawNested() {
-            var svg = d3.select("#dataviz_Slider svg");
-            var size = d3.scaleSqrt()
-                .domain([1, 100])  // What's in the data, let's say it is percentage
-                .range([1, 100]); // Size in pixel
+            let svg = d3.select("#dataviz_Slider svg");
+            let size = d3.scaleSqrt()
+                .domain([1, 100])
+                .range([1, 100]);
 
             // Add legend: circles
-            var valuesToShow = this.values;
-            var xCircle = 130;
-            var xLabel = 330;
-            var yCircle = 210;
+            let valuesToShow = this.values;
+            let xCircle = 130;
+            let xLabel = 330;
+            let yCircle = 210;
             svg
                 .selectAll("legend")
                 .data(valuesToShow)
                 .enter()
                 .append("circle")
+                .attr("class", "circle_slider")
                 .attr("cx", xCircle)
                 .attr("cy", function(d){ return yCircle - size(d.x) } )
                 .attr("r", function(d){ return size(d.x) })
-                .attr("class", function (d) {
+                .attr("id", function (d) {
                     return "circle" + d.i;
                 })
                 .style("fill", function (d) {
@@ -74,7 +74,8 @@ export default {
                 .data(valuesToShow)
                 .enter()
                 .append("line")
-                .attr("class", function (d) {
+                .attr("class", "line_slider")
+                .attr("id", function (d) {
                     return "line" + d.i;
                 })
                 .attr('x1', function(d){ return xCircle + size(d.x) } )
@@ -96,7 +97,8 @@ export default {
                 .data(valuesToShow)
                 .enter()
                 .append("text")
-                .attr("class", function (d) {
+                .attr("class", "text_slider")
+                .attr("id", function (d) {
                     return "text" + d.i;
                 })
                 .attr('x', xLabel)
@@ -112,9 +114,9 @@ export default {
                 .attr('alignment-baseline', 'middle')
         },
         changeSize(value) {
-            var circle = d3.select(".circle" + value);
-            var line = d3.select(".line" + value);
-            var label = d3.select(".text" + value);
+            let circle = d3.select("#circle" + value);
+            let line = d3.select("#line" + value);
+            let label = d3.select("#text" + value);
             circle.style("fill", function (d) {
                 return d.color;
             });
@@ -126,9 +128,9 @@ export default {
     watch: {
         data: {
             handler(value) {
-                d3.selectAll("circle").style("fill", "none");
-                d3.selectAll("line").style("stroke", "none");
-                d3.selectAll("text").text("");
+                d3.selectAll(".circle_slider").style("fill", "none");
+                d3.selectAll(".line_slider").style("stroke", "none");
+                d3.selectAll(".text_slider").text("");
                 this.changeSize(value);
             },
             deep:true,
@@ -136,5 +138,3 @@ export default {
     }
 }
 </script>
-
-<style scoped></style>

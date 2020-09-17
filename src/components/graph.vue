@@ -8,7 +8,7 @@
     export default {
         name: "binaryViz",
         props: {
-            nodes: Array, //data passed through root component App.vue
+            nodes: Array,
             edges: Array
         },
         data() {
@@ -22,8 +22,7 @@
             this.margin = {top: 0, right: 10, bottom: 10, left: 10};
             this.width = 400 - this.margin.left - this.margin.right;
             this.height = 200 - this.margin.top - this.margin.bottom;
-            //svg
-            var svg = d3.select("#graph-viz")
+            d3.select("#graph-viz")
                 .append("svg")
                 .attr("width", this.width + this.margin.left + this.margin.right)
                 .attr("height", this.height + this.margin.top + this.margin.bottom);
@@ -70,7 +69,6 @@
                     d3.select(this).classed("active", false);
                 }
 
-                // Add the arrowhead marker definition to the svg element
                 svg
                     .append('defs')
                     .append('marker')
@@ -85,7 +83,6 @@
                     .attr('d', d3.line()(arrowPoints))
                     .attr('stroke', 'black');
 
-                // Add circles to the svg element
                 const g = svg.selectAll('node')
                     .data(nodes)
                     .join(function (group) {
@@ -99,7 +96,7 @@
                         .on("drag", dragged)
                         .on("end", dragend));
 
-                let colors = ["#3282b8", "#005cbf", "#0069d9", "#929fba"]
+                let colors = ["#3282b8", "#005cbf", "#0069d9", "#929fba"];
 
                 g.select(".group_circle")
                     .attr("cx", function (d) {
@@ -131,11 +128,9 @@
                     .text(function (d) {
                         return d.name;
                     })
-                    .style('font-size', d => 36 * 0.4 + 'px')
+                    .style('font-size', 36 * 0.4 + 'px')
                     .attr("fill", "white");
 
-
-                // Add link with arrowhead at the end
                 svg.selectAll("line")
                     .data(edges)
                     .enter()

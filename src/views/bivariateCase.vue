@@ -1,15 +1,15 @@
 <template>
   <mdb-container class="mb">
-    <!-- header-->
+    <!-- Header-->
     <div class="header d-flex justify-content-center">
       <h2 class="indigo-text"><strong>Bivariate Case</strong></h2>
     </div>
-    <!-- scatter plot + overview-->
-   <!-- <mdb-row>
+    <!-- Scatter plot + overview-->
+    <mdb-row>
       <mdb-col sm="6">
         <mdb-card class="intro">
-            <div id="scatter_plot" v-if="selected" :visible="visible"/>
-            <scatterplotExample v-if="!selected" :data="climateData" :current="current"/>
+          <div id="scatter_plot" v-if="selected" :visible="visible"/>
+          <scatterplotExample v-if="!selected" :data="climateData" :current="current"/>
         </mdb-card>
       </mdb-col>
 
@@ -26,48 +26,45 @@
               <strong>Can you guess which one is a cause of the other?</strong>
               <mdb-btn id="message" block @click="toggle()">Show answer</mdb-btn>
               <span v-if="visible">The data consists of measurements of altitude and mean annual
-              temperature of more than 300 weather stations in Germany. It should be obvious that
-              altitude causes temperature rather than the other way around.
-                <br> So, the right answer is B causes A.
-               </span>
+                   temperature of more than 300 weather stations in Germany. It should be obvious that
+                   altitude causes temperature rather than the other way around.
+                     <br> So, the right answer is B causes A.
+                    </span>
 
             </p>
           </mdb-card-body>
         </mdb-card>
       </mdb-col>
-    </mdb-row>-->
-
-    <!-- description of the procedure-->
-      <br>
-     <!-- <section>
-        <h5 class="section_title">Model Description</h5>
-        <p>Hoyer et al. [2009] showed that nonlinearity of the functional relationships aids
+    </mdb-row>
+    <!-- Description of the procedure-->
+    <br>
+    <section>
+      <h5 class="section_title">Model Description</h5>
+      <p>Hoyer et al. [2009] showed that nonlinearity of the functional relationships aids
         in identifying the causal direction, as long as the in
         influence of the noise is additive. More precisely, they consider the following class of models:<br>
         A bivariate Additive Noise Model (ANM) X&rarr;Y is defined as</p>
-        <p class="text-center">Y &ratio;= &#402;<sub>Y</sub>(X) + N<sub>Y</sub> with X &perp; N<sub>Y</sub><br>
+      <p class="text-center">Y &ratio;= &#402;<sub>Y</sub>(X) + N<sub>Y</sub> with X &perp; N<sub>Y</sub><br>
         &#402;<sub>Y</sub> &ratio;  &#8477; &rarr;  &#8477; is a Borel measurable function
-        </p>
-        <h5 class="section_title">Identifiability</h5>
-        <p>We are especially interested in cases for which the additivity requirement introduces an
-          <strong>asymmetry between X and Y</strong>.</p>
-        <div class="definition font-italic">If the joint density p(x,y) satisfies an Additive Noise Model X&rarr;Y, but does
-          not satisfy any Additive Noise Model Y &larr; X, then we call the ANM X&rarr;Y
+      </p>
+      <h5 class="section_title">Identifiability</h5>
+      <p>We are especially interested in cases for which the additivity requirement introduces an
+        <strong>asymmetry between X and Y</strong>.</p>
+      <div class="definition font-italic">If the joint density p(x,y) satisfies an Additive Noise Model X&rarr;Y, but does
+        not satisfy any Additive Noise Model Y &larr; X, then we call the ANM X&rarr;Y
         <strong>identifiable</strong> (from the observational distribution).</div>
-        <h5 class="section_title">Inference Procedure</h5>
-        <span>We provide an interactive visualization that enables non-advanced users
-          to <strong>explore step-by-step</strong> the causal discovery algorithm implemented.
-          This setting helps create an in-depth understanding of the exact casual model that
-          governs the relations between pairwise variables from real-world dataset.
-          <br>More specifically, this visual interface allows to:</span>
-      </section>
-
-
-      <mdb-row class="row justify-content-center">
+      <h5 class="section_title">Inference Procedure</h5>
+      <span>We provide an interactive visualization that enables non-advanced users
+             to <strong>explore step-by-step</strong> the causal discovery algorithm implemented.
+             This setting helps create an in-depth understanding of the exact casual model that
+             governs the relations between pairwise variables from real-world dataset.
+             <br>More specifically, this visual interface allows to:</span>
+    </section>
+    <mdb-row class="row justify-content-center">
       <mdb-col sm="4">
         <mdb-card class="intro"  v-animateOnScroll="'fadeIn'">
           <mdb-card-body>
-            <img alt="one" src="./icons/number-2.png" style="width: 50px"/>
+            <img alt="one" src="./icons/number-1.png" style="width: 50px"/>
             <p style="clear:right">Recognize the intuition behind the asymmetries</p>
           </mdb-card-body>
         </mdb-card>
@@ -88,49 +85,57 @@
           </mdb-card-body>
         </mdb-card>
       </mdb-col>
-    </mdb-row>-->
+    </mdb-row>
 
-    <!-- button dataset + descriptions-->
-      <p>
-        <span id="approach1"><strong>Case Studies -  Dataset </strong></span>
-        <mdb-tooltip trigger="hover" :options="{placement: 'right'}">
+    <!-- Button dataset + descriptions-->
+    <p>
+      <span id="approach1"><strong>Case Studies -  Dataset </strong></span>
+      <mdb-tooltip trigger="hover" :options="{placement: 'right'}">
           <span slot="tip">The data sets were selected such that <br>we expect common agreement on the ground
                 truth.</span>
-          <mdb-icon slot="reference" icon="info-circle" id="info"/>
-        </mdb-tooltip>
-      </p>
-      <mdb-btn-group id="btn-dataset">
-        <mdb-btn  v-for="(item, i) in options"
-                 :key="item.key"
-                  @click="handleClick(i)"
-                 :class="{current: i === current}"
-                 color="primary"
-        >{{item.key}}</mdb-btn>
-      </mdb-btn-group>
-      <div class="card">
-        <div class="card-body">
-          <p class="title"><b>Dataset Description</b></p>
-          <p>{{datasetInfo[current].description}} <br/>
-             No. of instances: {{datasetInfo[current].instances}}<br/>
-             Data Type: Continuous
-          </p>
+        <mdb-icon slot="reference" icon="info-circle" id="info"/>
+      </mdb-tooltip>
+    </p>
+    <mdb-btn-group id="btn-dataset">
+      <mdb-btn  v-for="(item, i) in options"
+                :key="item.key"
+                @click.native="childClick(i)"
+                :class="{current: i === current}"
+                color="primary"
+      >{{item.key}}</mdb-btn>
+    </mdb-btn-group>
 
-        </div>
+    <div class="card">
+      <div class="card-body">
+        <p class="title"><b>Description</b></p>
+        <p>{{datasetInfo[current].description}} <br/>
+          No. of instances: {{datasetInfo[current].instances}}<br/>
+          Data Type: Continuous
+        </p>
+
       </div>
-    <!-- ********** -->
+    </div>
 
     <!--Implementation SideBar-->
-    <!--<h5 style="margin-top: 15px" class="font-weight-bold">Practical Estimation Method</h5>
-
-    <div>
-      <div class="mb-3">
-        <b-button v-b-toggle href="#description" @click.prevent>More Information</b-button>
+    <div class="my-3">
+      <h5 style="margin-top: 15px; display: inline !important; margin-block-start: unset; margin-block-end: unset"
+          class="font-size: 1.25rem; font-weight-bold">Practical Estimation Method</h5>
+      <div class="d-inline pl-3">
+        <b-button class="info_button p-2" style="font-size: 10px; border-radius: unset;
+         font-family: 'Segoe UI';" v-b-toggle href="#description" @click.prevent>More Information</b-button>
       </div>
+      <p>
+        This section allows to explore the process used to learn the underlying causal graph with ANM method.
+        The framework visualizes the causal relations as an interactive spatial 2D layout
+        in which each edge connecting two variables implies a causal relation and the direction of an edge identifies
+        the effect from the cause.
+        Mathematical measurements of causal relations in the form of regression analysis are calculated for enabling
+        you to examine potential causalities in depth.
+      </p>
 
       <b-sidebar id="description" title="Approach Details" shadow>
         <div class="px-3 py-2">
           <p>
-            <strong>Regressor</strong><br>
             <strong>Regressor</strong><br>
             For the regression, we used the Gaussian Process Regressor using a Gaussian kernel
             and independent Gaussian noise, optimizing the hyperparameters for each regression individually.
@@ -145,12 +150,26 @@
           </p>
         </div>
       </b-sidebar>
-    </div>-->
+    </div>
 
-    <!--<mdb-card class="model" v-if="options[current].edges[0].source === 0">
+    <!--DAG-->
+    <p><strong>Directed Acyclic Graph for sample data</strong></p>
+    <graph :edges="options[current].edges" :nodes="options[current].nodes"/>
+    <mdb-row class="justify-content-center" v-animateOnScroll="'fadeIn'">
+      <mdb-col sm="2" class="text-center"><mdb-icon id="key_circle" icon="circle"/></mdb-col>
+      <mdb-col sm="2" class="text-center"><mdb-icon id="target_circle" icon="circle"/></mdb-col>
+      <mdb-col sm="2" class="text-center"><mdb-icon icon="circle"/></mdb-col>
+      <div class="w-100 d-none d-md-block"></div>
+      <mdb-col sm="2" class="text-center "><p>Key Factor</p></mdb-col>
+      <mdb-col sm="2" class="text-center"><p>Target Factor</p></mdb-col>
+      <mdb-col sm="2" class="text-center"><p>Direction of <br/> causal relationship</p></mdb-col>
+    </mdb-row>
+
+    <!--Description Forward Fit-->
+    <mdb-card class="model" v-if="options[current].edges[0].source === 0">
       <mdb-card-body>
         <p>
-         The correct model <strong> {{options[current].nodes[0].name}} causes {{options[current].nodes[1].name}} </strong>
+          The correct model <strong> {{options[current].nodes[0].name}} causes {{options[current].nodes[1].name}} </strong>
           leads a p value of <i>{{options[current].nodes[0].p_value}}</i>.
         </p>
       </mdb-card-body>
@@ -162,31 +181,36 @@
           leads a p value of <i>{{options[current].nodes[1].p_value}}</i>.
         </p>
       </mdb-card-body>
-    </mdb-card>-->
+    </mdb-card>
+
 
     <!--Forward fit-->
-    <mdb-row class="mb-4">
-      <mdb-col sm="6">
-        <mdb-card>
-          <mdb-card-body>
-            <regression-plot :folder="options[current].fwd" :xaxis="options[current].nodes[0].name"
-                             :yaxis="options[current].nodes[1].name" :title="r1" :key="componentKey1"/>
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
+    <div>
+      <mdb-row class="mb-4">
+        <mdb-col sm="6">
+          <mdb-card>
+            <mdb-card-body>
+              <regression-plot :folder="options[current].fwd" :xaxis="options[current].nodes[0].name"
+                               :yaxis="options[current].nodes[1].name" :title="r1" :key="componentKey1"/>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
 
-      <mdb-col sm="6" >
-        <mdb-card>
-          <mdb-card-body>
-            <residualsPlot :file="options[current].path_resX"
-                           :name="options[current].nodes[0].name"
-                           :title="r1" :key="componentKey2"/>
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
-    </mdb-row>
+        <mdb-col sm="6">
+          <mdb-card>
+            <mdb-card-body>
+              <residualsPlot :file="options[current].path_resX"
+                             :name="options[current].nodes[0].name"
+                             :title="r1" :key="componentKey2"/>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
+      </mdb-row>
+    </div>
 
-   <!-- <mdb-card class="model" v-if="options[current].edges[0].target === 1">
+    <!--Description Backward Fit-->
+
+    <mdb-card class="model" v-if="options[current].edges[0].target === 1">
       <mdb-card-body>
         <p>
           The reverse model <strong> {{options[current].nodes[1].name}} causes {{options[current].nodes[0].name}} </strong>
@@ -203,49 +227,33 @@
       </mdb-card-body>
     </mdb-card>
 
-    Backward Fit-->
-    <mdb-row class="mb-4">
-      <mdb-col sm="6">
-        <mdb-card>
-          <mdb-card-body>
-            <regression-plot :folder="options[current].bwd" :xaxis="options[current].nodes[1].name"
-                             :yaxis="options[current].nodes[0].name" :title="r2" :key="componentKey3"/>
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
+    <!--Backward Fit-->
+    <div>
+      <mdb-row class="mb-4">
+        <mdb-col sm="6">
+          <mdb-card>
+            <mdb-card-body>
+              <regression-plot :folder="options[current].bwd" :xaxis="options[current].nodes[1].name"
+                               :yaxis="options[current].nodes[0].name" :title="r2" :key="componentKey3"/>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
 
-      <mdb-col sm="6">
-        <mdb-card>
-          <mdb-card-body>
-            <residualsPlot :file="options[current].path_resY"
-                           :name="options[current].nodes[1].name"
-                           :title="r2" :key="componentKey4"/>
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
-    </mdb-row>
-
-    <!--DAG-->
-    <p><strong>Output - Learned Directed Acyclic Graph for sample data</strong></p>
-    <graph :edges="options[current].edges" :nodes="options[current].nodes"/>
-    <mdb-row class="justify-content-center" v-animateOnScroll="'fadeIn'">
-      <mdb-col sm="2" class="text-center"><mdb-icon id="key_circle" icon="circle"/></mdb-col>
-      <mdb-col sm="2" class="text-center"><mdb-icon id="target_circle" icon="circle"/></mdb-col>
-      <mdb-col sm="2" class="text-center"><mdb-icon icon="circle"/></mdb-col>
-      <div class="w-100 d-none d-md-block"></div>
-      <mdb-col sm="2" class="text-center "><p>Key Factor</p></mdb-col>
-      <mdb-col sm="2" class="text-center"><p>Target Factor</p></mdb-col>
-      <mdb-col sm="2" class="text-center"><p>Direction of <br/> causal relationship</p></mdb-col>
-    </mdb-row>
-    <!--******-->
-
-
-
+        <mdb-col sm="6">
+          <mdb-card class="animated fadeInRight">
+            <mdb-card-body>
+              <residualsPlot :file="options[current].path_resY"
+                             :name="options[current].nodes[1].name"
+                             :title="r2" :key="componentKey4"/>
+            </mdb-card-body>
+          </mdb-card>
+        </mdb-col>
+      </mdb-row>
+    </div>
   </mdb-container>
 </template>
 
 <script>
-  let d3 = require("d3");
   import Vue from 'vue';
   import graph from "../components/graph";
   import residualsPlot from "../components/residualsPlot";
@@ -255,6 +263,7 @@
     mdbCol, mdbCard, mdbCardBody, mdbIcon, animateOnScroll, mdbTooltip} from "mdbvue";
   import { BootstrapVue} from 'bootstrap-vue';
   Vue.use(BootstrapVue);
+  let d3 = require("d3");
   import 'bootstrap/dist/css/bootstrap.css';
   import 'bootstrap-vue/dist/bootstrap-vue.css';
 
@@ -264,7 +273,7 @@
       regressionPlot,
       graph,
       residualsPlot,
-      //scatterplotExample,
+      scatterplotExample,
       mdbCard,
       mdbCardBody,
       mdbBtnGroup,
@@ -275,7 +284,6 @@
       mdbIcon,
       mdbTooltip
     },
-
     directives: {
       animateOnScroll
     },
@@ -423,7 +431,7 @@
       this.margin = {top: 10, right: 30, bottom: 30, left: 60};
       this.width = 460 - this.margin.left - this.margin.right;
       this.height = 400 - this.margin.top - this.margin.bottom;
-      const svg = d3.select("#scatter_plot")
+      d3.select("#scatter_plot")
               .append("svg")
               .attr("width", this.width + this.margin.left + this.margin.right)
               .attr("height", this.height + this.margin.top + this.margin.bottom);
@@ -444,8 +452,8 @@
       });
     },
     methods: {
-      handleClick(i) {
-        //this.selected = false;
+      childClick(i) {
+        this.selected = false;
         this.current = i;
         this.forceRerender();
       },
@@ -454,7 +462,6 @@
         this.componentKey2 += 1;
         this.componentKey3 += 1;
         this.componentKey4 += 1;
-
       },
       toggle(){
         this.visible = !this.visible;
@@ -589,7 +596,7 @@
 
           }
         }
-    },
+      },
       current: {
         handler() {
           d3.selectAll(".gScatter").remove();
@@ -723,6 +730,9 @@
   }
   img {
     float: left;
+  }
+  .info_button {
+    background-color: #005cbf !important;
   }
 
 </style>

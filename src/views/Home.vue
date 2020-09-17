@@ -143,12 +143,12 @@
           </div>
         </div>
         <div class="col-md-3 text-center p-2" style="margin-top: 40px;">
-          <img src="./icons/network_blu.png" class="img-fluid" alt="network">
+          <img src="./icons/network.png" class="img-fluid" alt="network">
         </div>
         <div class="col-md-4 px-1">
           <div class="row px-4 pt-4 pb-5">
             <p>To show the ability of ANM method to find the correct model when all the assumptions hold,
-            we have applied it to a variety of real-world datasets.</p>
+            we have applied it to a variety of real-world dataset.</p>
           </div>
           <div class="row p-4">
             <p> We also studied the performance of the method on simulated data where we can control the data-generating
