@@ -16,7 +16,7 @@
                 <div class="col-md-7">
                     <h4 class="h4-responsive font-weight-bold mb-1 pb-2">Exponential Search</h4>
                     <p class="text-left pr-5" style="line-height: 1.8">
-                        Given more than two variables, one way to estimate the causal model based is to use exhaustive search.
+                        Given more than two variables, one way to estimate the causal model is to use exhaustive search.
                         <br>However, as we can see exploring the chart, just by adding a single variable, <strong>the complexity of the procedure
                         increases exponentially along with the number of variables.</strong>
                         <br>
@@ -41,13 +41,19 @@
 
         <!--Practical Estimation Method-->
         <div class="container px-0 pb-2 mt-0 mb-1" >
-            <h5 style="margin-top: 15px; display: inline !important; margin-block-start: unset; margin-block-end: unset" class="font-weight-bold">Practical Estimation Method</h5>
-                <div class="d-inline pl-3">
-                    <b-button class="info_button p-2" style="font-size: 12px; border-radius: unset; font-family: 'Segoe UI';"
-                              v-b-toggle href="#description" @click.prevent>More Information</b-button>
-                </div>
+            <h5 style="margin-top: 15px; display: inline !important;
+            margin-block-start: unset; margin-block-end: unset" class="font-weight-bold">ANM Method</h5>
+                <mdb-tooltip class="ml-2" trigger="hover" :options="{placement: 'top'}">
+                      <span slot="tip">P. O. Hoyer, D. Janzing, J. M. Mooij, J. Peters, and B. Scholkopf.
+                        <i>Nonlinear causal discovery with additive noise models.</i>
+                        In Advances in Neural Information Processing Systems 21 (NIPS*2008), pages 689-696, 2009.</span>
+                <mdb-icon slot="reference" icon="info-circle" id="paper"/></mdb-tooltip>
+            <div class="d-inline pl-2">
+                <b-button class="info_button p-2" style="font-size: 12px; border-radius: unset; font-family: 'Segoe UI';"
+                          v-b-toggle href="#description" @click.prevent>More Information</b-button>
+            </div>
 
-                <b-sidebar id="description" title="Approach Details" shadow>
+                <b-sidebar id="description" title="Implementation" shadow>
                     <div class="px-3 py-2">
                         <p>
                             <strong>Regressor</strong><br>
@@ -85,10 +91,9 @@
             <h5 class="h5-responsive font-weight-bold">Synthetic Data</h5>
             <div class="row pb-3 justify-content-between">
                 <div class="col-lg-7">
-                    <p>We applied the method on simulated data where we can control the data-generating process
-                        and therefore can be certain about the ground truth.<br>
-                        <strong>It allowed us to develop a better understanding of the resulting graphs.</strong>
-                        <br> We did experiments for 4 variables <i>w, x, y</i> and <i>z</i> with a diamond-like causal
+                    <p>Applying the method on simulated data, we can control the data-generating process. Knowing the ground truth
+                        <strong>allows us to develop a better understanding of the resulting graphs.</strong>
+                        <br> We did experiments for four variables <i>w, x, y</i> and <i>z</i> with a diamond-like causal
                         structure. </p>
 
                     <ul>
@@ -144,7 +149,7 @@
 <script>
     let d3 = require("d3");
     import Vue from 'vue';
-    import {mdbContainer, mdbBtn} from 'mdbvue';
+    import {mdbContainer, mdbBtn, mdbTooltip, mdbIcon} from 'mdbvue';
     import slider from "../components/slider";
     import adjacencyMatrix from "../components/adjacencyMatrix";
     import VueSlider from 'vue-slider-component';
@@ -162,7 +167,9 @@
             slider,
             VueSlider,
             adjacencyMatrix,
-            mdbBtn
+            mdbBtn,
+            mdbIcon,
+            mdbTooltip
         },
         data() {
             return {
@@ -402,10 +409,7 @@
     .info_button {
         background-color: #0077b6 !important;
     }
-    .card {
-        border-color: #005cbf;
-        border-radius: unset;
-        margin-top: 10px;
-        border-width: 2px;
+    #paper {
+        color: #929fba;
     }
 </style>

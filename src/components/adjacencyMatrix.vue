@@ -55,7 +55,7 @@
         },
         methods: {
             createMatrix() {
-                var colorscaleValue = [
+                var colorValue = [
                     [0, '#dfeefd'],
                     [1, 'rgb(2, 62, 138, 0.8)']
                 ];
@@ -64,7 +64,7 @@
                     y: this.yValues,
                     z: this.zValues,
                     type: 'heatmap',
-                    colorscale: colorscaleValue,
+                    colorscale: colorValue,
                     showscale: true
                 };
                 this.traces.push(data);

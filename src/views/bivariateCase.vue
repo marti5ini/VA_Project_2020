@@ -40,7 +40,12 @@
     <br>
     <section>
       <h5 class="section_title">Model Description</h5>
-      <p>Hoyer et al. [2009] showed that nonlinearity of the functional relationships aids
+      <p>Hoyer et al.  <mdb-tooltip trigger="hover" :options="{placement: 'top'}">
+          <span slot="tip">P. O. Hoyer, D. Janzing, J. M. Mooij, J. Peters, and B. Scholkopf.
+            <i>Nonlinear causal discovery with additive noise models.</i>
+            In Advances in Neural Information Processing Systems 21 (NIPS*2008), pages 689-696, 2009.</span>
+        <mdb-icon slot="reference" icon="info-circle" id="paper"/>
+      </mdb-tooltip>  showed that nonlinearity of the functional relationships aids
         in identifying the causal direction, as long as the in
         influence of the noise is additive. More precisely, they consider the following class of models:<br>
         A bivariate Additive Noise Model (ANM) X&rarr;Y is defined as</p>
@@ -125,15 +130,15 @@
          font-family: 'Segoe UI';" v-b-toggle href="#description" @click.prevent>More Information</b-button>
       </div>
       <p>
-        This section allows to explore the process used to learn the underlying causal graph with ANM method.
+        This section allows for exploring the procedure used to learn the underlying causal graph.
         The framework visualizes the causal relations as an interactive spatial 2D layout
         in which each edge connecting two variables implies a causal relation and the direction of an edge identifies
-        the effect from the cause.
-        Mathematical measurements of causal relations in the form of regression analysis are calculated for enabling
-        you to examine potential causalities in depth.
+        the effect from the cause.<br>
+        It also examines mathematical measurements of causal relations in the form of regression analysis
+        to provide an exhaustively understanding of causalities.
       </p>
 
-      <b-sidebar id="description" title="Approach Details" shadow>
+      <b-sidebar id="description" title="Implementation" shadow>
         <div class="px-3 py-2">
           <p>
             <strong>Regressor</strong><br>
@@ -151,6 +156,7 @@
         </div>
       </b-sidebar>
     </div>
+
 
     <!--DAG-->
     <p><strong>Directed Acyclic Graph for sample data</strong></p>
@@ -209,7 +215,6 @@
     </div>
 
     <!--Description Backward Fit-->
-
     <mdb-card class="model" v-if="options[current].edges[0].target === 1">
       <mdb-card-body>
         <p>
@@ -250,6 +255,7 @@
         </mdb-col>
       </mdb-row>
     </div>
+
   </mdb-container>
 </template>
 
@@ -385,7 +391,7 @@
             instances: '4177',
             description: 'The Abalone dataset, from the UCI ML repository, contains measurements\n' +
                     'of the number of rings in the shell of abalone (a group of shellfish), which indicate their age, and the\n' +
-                    'length of the shell. We show the results for a subsample of 500 datapoints.'
+                    'length of the shell. We show results for a subsample of 500 datapoints.'
           },
           {
             instances: '194',
@@ -733,6 +739,9 @@
   }
   .info_button {
     background-color: #005cbf !important;
+  }
+  #paper {
+    color: #929fba;
   }
 
 </style>

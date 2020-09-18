@@ -13,8 +13,9 @@
         },
         props: {
             file: String,
-            name: String,
-            title: String
+            title: String,
+            name: String
+
         },
         data() {
             return {

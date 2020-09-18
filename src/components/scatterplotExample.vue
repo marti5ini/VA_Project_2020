@@ -153,6 +153,12 @@
                     this.refresh();
                 },
                 deep: true,
+            },
+            data: {
+                handler() {
+                    this.refresh();
+                },
+                deep: true,
             }
         }
     }

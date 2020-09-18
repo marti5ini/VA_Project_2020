@@ -181,10 +181,13 @@
     margin-right: 120px;
     margin-left: 120px;
   }
-a {
-  text-decoration: none;
-}
-a:visited {
-  color: #0d47a1;
-}
+  a{
+    text-decoration: none;
+  }
+  a:visited {
+    color: #0d47a1;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 </style>

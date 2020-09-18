@@ -1,5 +1,5 @@
 <template>
-    <div id="graph-viz"></div>
+    <div id="graph-viz"/>
 </template>
 
 <script>

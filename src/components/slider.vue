@@ -15,8 +15,8 @@ export default {
         return {
             errorMsg: '',
             margin: {},
-            width: 0,
             height: 0,
+            width: 0,
             values: [
                 {x: 1.2, i: 4, text:"729", color:"rgb(0, 180, 216, 0.8)"},
                 {x: 2, i: 5, text:"59 Thousand", color:"rgb(0, 150, 199, 0.8)"},

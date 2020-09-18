@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!--Navigation Bar-->
     <mdb-navbar position="top" dark color="indigo" scrolling>
       <mdb-navbar-brand>
         <router-link class="navbar-brand" to="/" ><strong>Nonlinear Causal Discovery with ANM</strong></router-link>
@@ -15,14 +16,19 @@
         </mdb-navbar-nav>
       </mdb-navbar-toggler>
     </mdb-navbar>
+
+    <!--Page transition-->
     <transition name="moveInUp">
       <router-view/>
     </transition>
+
+    <!--Footer-->
     <footer class="page-footer font-small indigo">
       <div class="footer-copyright text-center py-3 white-text">
         <p>© 2020 VA Project | Martina Cinquini</p>
       </div>
     </footer>
+
   </div>
 </template>
 

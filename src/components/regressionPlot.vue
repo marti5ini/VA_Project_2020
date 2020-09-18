@@ -14,8 +14,8 @@
         props: {
             folder: String,
             xaxis: String,
-            yaxis: String,
-            title: String
+            title: String,
+            yaxis: String
         },
         data() {
             return {
