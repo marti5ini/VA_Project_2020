@@ -123,7 +123,7 @@
 
     <!--Visual Interface-->
     <div class="container my-1 p-5 z-depth-1">
-      <h2 class="text-center h2-responsive font-weight-bold" style="color: #0d47a1">A Framework for Causal Visualization</h2>
+      <h2 class="text-center h2-responsive font-weight-bold" style="color: #0d47a1">An Application for Causal Visualization</h2>
       <!--subtitle-->
       <p class="text-center px-5 pt-3" style="line-height: 1.8">
         This framework offers <strong>an interactive and automatic tool for exploring step-by-step the algorithm <br>
