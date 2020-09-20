@@ -1,4 +1,4 @@
-# cinquini_va2020
+# Visual Analytics Project - 2020
 
 ## Project setup
 ```
