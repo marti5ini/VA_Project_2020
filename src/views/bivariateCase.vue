@@ -59,7 +59,7 @@
         not satisfy any Additive Noise Model Y &larr; X, then we call the ANM X&rarr;Y
         <strong>identifiable</strong> (from the observational distribution).</div>
       <h5 class="section_title">Inference Procedure</h5>
-      <span>We provide an interactive visualization that enables non-advanced users
+      <span>We provide an interactive visualization that enables users
              to <strong>explore step-by-step</strong> the causal discovery algorithm implemented.
              This setting helps create an in-depth understanding of the exact casual model that
              governs the relations between pairwise variables from real-world dataset.
