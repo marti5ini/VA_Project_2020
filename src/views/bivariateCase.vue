@@ -130,12 +130,25 @@
          font-family: 'Segoe UI';" v-b-toggle href="#description" @click.prevent>More Information</b-button>
       </div>
       <p>
-        This section allows for exploring the procedure used to learn the underlying causal graph.
+        The procedure will result in one of several possible scenarios:</p>
+      <ol type="1">
+        <li>if x and y are mutually independent we infer that there is no causal relationship between the two, and no further
+          analysis is performed.</li>
+        <li>if they are dependent but both directional models are
+          accepted we conclude that either model may be correct but we cannot infer it from the data.</li>
+        <li><strong>A more positive result is when we are able to reject one of the directions and accept the
+          other.</strong></li>
+        <li>Finally, it may be the case that neither direction is consistent with the data, in which case we
+          conclude that the generating mechanism is more complex and cannot be described using this model.</li>
+      </ol>
+      <p>
+        <strong>This section allows for exploring the accepted scenario used to learn the underlying causal graph.</strong><br>
         The framework visualizes the causal relations as an interactive spatial 2D layout
         in which each edge connecting two variables implies a causal relation and the direction of an edge identifies
         the effect from the cause.<br>
         It also examines mathematical measurements of causal relations in the form of regression analysis
         to provide an exhaustively understanding of causalities.
+
       </p>
 
       <b-sidebar id="description" title="Implementation" shadow>

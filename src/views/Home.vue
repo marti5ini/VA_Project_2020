@@ -126,7 +126,7 @@
       <h2 class="text-center h2-responsive font-weight-bold" style="color: #0d47a1">An Application for Causal Visualization</h2>
       <!--subtitle-->
       <p class="text-center px-5 pt-3" style="line-height: 1.8">
-        This framework offers <strong>an interactive and automatic tool for exploring step-by-step the algorithm <br>
+        This visual interface offers <strong>an interactive and automatic tool for exploring step-by-step the algorithm <br>
         "Nonlinear Causal Discovery with additive noise models" originally proposed by Prof. Hoyer of Helsinki University, Finland.</strong> <br>
       </p>
       <!--img + key points-->

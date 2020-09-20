@@ -112,7 +112,7 @@
             <div class="container pl-0 pb-2">
                 <p><strong>The simplest DAG that was consistent with the data turned out to be precisely the true causal structure.
                 </strong>
-                    To explore dynamically experiments results on the causal relations, you can examine the matrix below.</p>
+                    To explore dynamically experiments results on the causal relations, you can examine the heatmap below.</p>
             </div>
             <div class="row justify-content-between">
                 <div class="col-lg-4">
@@ -122,7 +122,7 @@
                                 :key="item.id"
                         >{{item.value}}</option>
                     </select>
-                    <p class="pt-4 mb-1">Number of points (of the distributions)</p>
+                    <p class="pt-4 mb-1">Sample size</p>
                     <select  v-model="selected_nPoints" class="browser-default custom-select">
                         <option v-for="item in points"
                                 :key="item.id"
@@ -139,7 +139,7 @@
 
                 </div>
                 <div class="col-lg-6">
-                    <adjacencyMatrix :zValues="zvaluesData[0]"/>
+                    <heatMap :zValues="zvaluesData[0]"/>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@
     import Vue from 'vue';
     import {mdbContainer, mdbBtn, mdbTooltip, mdbIcon} from 'mdbvue';
     import slider from "../components/slider";
-    import adjacencyMatrix from "../components/adjacencyMatrix";
+    import heatMap from "../components/heatMap";
     import VueSlider from 'vue-slider-component';
     import 'vue-slider-component/theme/default.css'
     import { BootstrapVue} from 'bootstrap-vue';
@@ -166,7 +166,7 @@
             mdbContainer,
             slider,
             VueSlider,
-            adjacencyMatrix,
+            heatMap,
             mdbBtn,
             mdbIcon,
             mdbTooltip

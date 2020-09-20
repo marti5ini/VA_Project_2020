@@ -7,7 +7,7 @@
     import VuePlotly from '@statnett/vue-plotly';
 
     export default {
-        name: "adjacencyMatrix",
+        name: "heatMap",
         components: {
             VuePlotly,
         },
